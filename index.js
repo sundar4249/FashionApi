@@ -9,7 +9,10 @@ const auth = require('./auth');
 const bannerroute = require('./routes/bannerImages');
 const cors = require('cors');
 const item = require('./routes/items');
+const updateRoute = require('./routes/updates');
 const shoes = require('./routes/Shoes');
+const male = require('./routes/Male');
+const female = require('./routes/Female');
 
 
 const app = express();
@@ -28,8 +31,11 @@ mongoose.connect(process.env.URL, { useNewUrlParser: true, useUnifiedTopology: t
 app.use('/users', userRouter);
 app.use('/upload', uploadRouter);
 app.use('/item',item);
+app.use('/update',updateRoute);
 app.use('/banner',bannerroute);
 app.use('/shoes',shoes);
+app.use('/Male',male);
+app.use('/Female',female);
 app.use(auth.verifyUser);
 app.use('/categories', categoryRouter);
 
