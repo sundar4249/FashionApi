@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const update = require('../models/update');
+const update = require('../models/updates');
 const auth = require('../auth');
 
 router.post('/create',(req,res,next)=>{
